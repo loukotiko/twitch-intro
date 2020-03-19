@@ -117,10 +117,10 @@ body {
 
 #smoke_layer {
   position: absolute;
-  top: calc(50% - 130px);
+  top: 0;
   left: 150%;
   width: 0;
-  height: 0;
+  bottom: 0;
   z-index: var(--zSmoke);
   animation: planeShow 15s 5s forwards;
 }
