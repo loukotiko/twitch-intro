@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nova+Mono|PT+Sans+Narrow:700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body style="overflow: hidden">
+    <div id="scene">
+      <div id="clouds_layer"></div>
+      <div id="smoke_layer"></div>
+      <div id="plane_layer">
+        <img class="animated" src="./assets/crocodile_echarpe.gif" />
+        <img id="plane" src="./assets/avion_base.png" />
+        <img class="animated" src="./assets/coati_laniere.gif" />
+        <img class="animated" src="./assets/coati_plumes.gif" />
+        <img class="animated" src="./assets/helice.gif" />
+        <img class="animated" src="./assets/crocodile_bras.gif" />
+        <img
+          class="animated"
+          id="loukoEyes"
+          src="./assets/crocodile_yeux.png"
+        />
+        <img class="animated" id="tikoEyes" src="./assets/coati_yeux.png" />
+        <audio id="plane_sound" loop>
+          <source src="./assets/plane.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+      <div id="flyings_layer"></div>
+    </div>
+
+    <div id="timer">
+      <div id="timer_text">Début du live à</div>
+      <div id="timer_time">-- --</div>
+    </div>
+
+    <audio id="music_sound" autoplay>
+      <source src="./assets/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

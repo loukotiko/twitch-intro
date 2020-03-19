@@ -1,0 +1,218 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-image: url(./assets/ciel.png);
+  background-position: center center;
+  background-size: cover;
+}
+:root {
+  --zTimer: 1;
+  --zSmoke: 2;
+  --zPlane: 2;
+}
+@keyframes timerDown {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 80%;
+  }
+}
+
+#timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: var(--zTimer);
+  animation: timerDown 1s 14s forwards cubic-bezier(0.72, -0.42, 0.3, 1.36);
+
+  text-align: center;
+  padding: 30px;
+}
+
+#timer_text {
+  font-size: 40px;
+  line-height: 30px;
+  font-family: "PT Sans Narrow", sans-serif;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #6caebf;
+}
+
+#timer_time {
+  text-align: center;
+  line-height: 150px;
+  font-size: 160px;
+  font-family: "Nova Mono", monospace;
+  font-weight: bold;
+  color: #3e7584;
+}
+
+@keyframes planeShow {
+  from {
+    left: 200%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes planeUpDown {
+  from {
+    transform: translateY(-40px) rotate(1deg);
+  }
+  to {
+    transform: translateY(40px) rotate(0deg);
+  }
+}
+
+#plane_layer {
+  display: block;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: 150%;
+  width: 0;
+  height: 0;
+  transform-origin: bottom left;
+  animation: planeShow 15s 5s forwards,
+    planeUpDown 2s infinite alternate-reverse ease-in-out;
+  z-index: var(--zPlane);
+}
+
+#plane,
+.animated {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  height: 780px;
+  z-index: var(--zPlane);
+}
+
+@keyframes smokeFade {
+  from {
+    transform: translateX(0) scale(0.7);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(180px) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(600px) scale(0.7);
+    opacity: 0;
+  }
+}
+
+#smoke_layer {
+  position: absolute;
+  top: calc(50% - 130px);
+  left: 150%;
+  width: 0;
+  height: 0;
+  z-index: var(--zSmoke);
+  animation: planeShow 15s 5s forwards;
+}
+
+.smoke {
+  position: absolute;
+  background-image: url("./assets/fumee_1.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 160px;
+  animation: smokeFade 0.6s ease-in forwards;
+}
+
+@keyframes cloudPass {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 150%;
+  }
+}
+
+.cloud {
+  position: absolute;
+  background-image: url("./assets/nuage_1.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  animation: cloudPass ease-in forwards;
+}
+
+@keyframes flyingPass {
+  from {
+    left: -100%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    left: 200%;
+    transform: translate(-50%, -50%) rotate(3600deg);
+  }
+}
+
+.flying {
+  position: absolute;
+  background-image: url("./assets/viking.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: -100%;
+  animation: flyingPass ease-in forwards;
+}
+
+@keyframes openEye {
+  39.99% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  45.01% {
+    opacity: 0;
+  }
+}
+
+#loukoEyes {
+  opacity: 0;
+  animation: openEye 43s infinite alternate;
+}
+
+@keyframes blinkEyes {
+  41.99% {
+    opacity: 0;
+  }
+  42% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  45.01% {
+    opacity: 0;
+  }
+}
+
+#tikoEyes {
+  opacity: 0;
+  animation: blinkEyes 13.7s infinite;
+}
