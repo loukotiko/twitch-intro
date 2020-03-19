@@ -23,7 +23,7 @@ define(function(require) {
 
     setTimeout(() => $clouds.removeChild($cloud), duration * 1000);
 
-    setTimeout(() => createCloud(), Math.random() * 3000);
+    setTimeout(() => createCloud(), Math.random() * 3500 + 500);
   }
 
   createCloud();
