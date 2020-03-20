@@ -1,5 +1,5 @@
 define(function(require) {
-  const $planeSound = document.getElementById("plane_sound");
+  /*const $planeSound = document.getElementById("plane_sound");
   const $musicSound = document.getElementById("music_sound");
 
   function playTilItsGood($sound) {
@@ -26,5 +26,5 @@ define(function(require) {
 
   init();
 
-  playTilItsGood($musicSound);
+  playTilItsGood($musicSound);*/
 });
