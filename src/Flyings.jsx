@@ -34,7 +34,7 @@ define(function(require) {
 
     setTimeout(() => $flyings.removeChild($flying), duration * 1000);
 
-    setTimeout(() => createFlying(), Math.random() * 15000 + 2000);
+    setTimeout(() => createFlying(), Math.random() * 10000 + 2000);
   }
 
   setTimeout(() => createFlying(), 15000);
